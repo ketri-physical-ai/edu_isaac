@@ -8,8 +8,8 @@ GUI 창에서 큐브가 떨어져 바닥에 멈추면 정상이다.
 
 사용법:
     cd /data/src/isaaclab
-    ./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py            # GUI
-    ./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py --headless # 창 없이 점검만
+    ./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py            # GUI
+    ./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py --headless # 창 없이 점검만
 """
 
 import argparse

@@ -7,8 +7,8 @@ GUI 창이 열리고, 바닥 위에 노란 큐브 하나가 보이고, 뷰포트
 
 사용법:
     cd /data/src/isaaclab
-    ./_isaac_sim/python.sh /data/src/test_code/test_01_isaac_sim.py            # GUI
-    ./_isaac_sim/python.sh /data/src/test_code/test_01_isaac_sim.py --headless # 창 없이 점검만
+    ./_isaac_sim/python.sh /data/src/edu_isaac/test_01_isaac_sim.py            # GUI
+    ./_isaac_sim/python.sh /data/src/edu_isaac/test_01_isaac_sim.py --headless # 창 없이 점검만
 """
 
 import argparse

@@ -8,9 +8,9 @@ GUI 창에서 카트폴 여러 개가 동시에 무작위로 흔들리면 정상
 
 사용법:
     cd /data/src/isaaclab
-    ./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py                  # GUI
-    ./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py --headless       # 창 없이 점검만
-    ./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py --num_envs 64    # 환경 수 변경
+    ./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py                  # GUI
+    ./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py --headless       # 창 없이 점검만
+    ./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py --num_envs 64    # 환경 수 변경
 """
 
 import argparse

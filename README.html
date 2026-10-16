@@ -173,7 +173,7 @@
   </p>
   <div class="chips">
     <span class="chip accent">WBS 2.5</span>
-    <span class="chip">/data/src/test_code</span>
+    <span class="chip">/data/src/edu_isaac</span>
     <span class="chip">Isaac Sim 6.0.1-rc.7</span>
     <span class="chip">Isaac Lab 3.0.0</span>
     <span class="chip ok">2026-08-19 전 항목 PASS</span>
@@ -208,7 +208,7 @@
   <tbody>
     <tr><td>Isaac Lab 경로</td><td><code>/data/src/isaaclab</code></td></tr>
     <tr><td>Isaac Sim 경로</td><td><code>/data/src/isaaclab/_isaac_sim</code> (심볼릭 링크)</td></tr>
-    <tr><td>테스트 코드 경로</td><td><code>/data/src/test_code</code></td></tr>
+    <tr><td>테스트 코드 경로</td><td><code>/data/src/edu_isaac</code></td></tr>
   </tbody>
 </table>
 </div>
@@ -228,10 +228,10 @@
 <h2 id="s2"><span class="num">2.</span>가장 빠른 실행 — 일괄 실행</h2>
 
 <pre><code><span class="c"># GUI 창이 순서대로 떴다 닫힌다 (약 4분)</span>
-/data/src/test_code/run_all.sh
+/data/src/edu_isaac/run_all.sh
 
 <span class="c"># 창 없이 점검만 — 원격 접속 · PC 9대 복제 후 자동 점검용 (약 3분)</span>
-/data/src/test_code/run_all.sh --headless</code></pre>
+/data/src/edu_isaac/run_all.sh --headless</code></pre>
 
 <p><code>run_all.sh</code> 는 <code>[00] → [01] → [02] → [03]</code> 순서로 실행하고 마지막에 요약을 출력한다.
 <code>[00]</code> 이 실패하면 이후 단계를 실행하지 않고 즉시 중단한다.</p>
@@ -255,7 +255,7 @@
 <p>OS · GPU 드라이버 · 디스크 · DISPLAY · 설치 경로 · 버전을 확인한다.
 Isaac Sim 을 띄우지 않으므로 <strong>시스템 <code>python3</code> 로 실행</strong>한다.</p>
 
-<pre><code><span class="p">python3</span> /data/src/test_code/test_00_env_check.py</code></pre>
+<pre><code><span class="p">python3</span> /data/src/edu_isaac/test_00_env_check.py</code></pre>
 
 <p>옵션 없음.</p>
 
@@ -267,13 +267,13 @@ Isaac Sim 을 띄우지 않으므로 <strong>시스템 <code>python3</code> 로 
 <pre><code><span class="p">cd</span> /data/src/isaaclab
 
 <span class="c"># GUI (기본)</span>
-./_isaac_sim/python.sh /data/src/test_code/test_01_isaac_sim.py
+./_isaac_sim/python.sh /data/src/edu_isaac/test_01_isaac_sim.py
 
 <span class="c"># 창 없이 점검만</span>
-./_isaac_sim/python.sh /data/src/test_code/test_01_isaac_sim.py --headless
+./_isaac_sim/python.sh /data/src/edu_isaac/test_01_isaac_sim.py --headless
 
 <span class="c"># 짧게 (렌더 프레임 수 축소)</span>
-./_isaac_sim/python.sh /data/src/test_code/test_01_isaac_sim.py --frames 120</code></pre>
+./_isaac_sim/python.sh /data/src/edu_isaac/test_01_isaac_sim.py --frames 120</code></pre>
 
 <div class="tw">
 <table class="opt">
@@ -293,14 +293,14 @@ Isaac Sim 을 띄우지 않으므로 <strong>시스템 <code>python3</code> 로 
 <pre><code><span class="p">cd</span> /data/src/isaaclab
 
 <span class="c"># GUI (기본)</span>
-./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py
+./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py
 
 <span class="c"># 창 없이 점검만</span>
-./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py --headless
+./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py --headless
 
 <span class="c"># 짧게 / CPU 로 실행</span>
-./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py --steps 120
-./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py --device cpu</code></pre>
+./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py --steps 120
+./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py --device cpu</code></pre>
 
 <div class="tw">
 <table class="opt">
@@ -321,16 +321,16 @@ M10 &ldquo;강화학습 개념 시연&rdquo; 의 최소 형태이기도 하다.<
 <pre><code><span class="p">cd</span> /data/src/isaaclab
 
 <span class="c"># GUI (기본) — 카트폴 16개가 무작위로 흔들린다</span>
-./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py
+./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py
 
 <span class="c"># 창 없이 점검만</span>
-./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py --headless
+./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py --headless
 
 <span class="c"># 환경 수 · 스텝 수 조정 (시연 시 환경을 늘리면 화면이 화려해진다)</span>
-./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py --num_envs 64 --steps 600
+./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py --num_envs 64 --steps 600
 
 <span class="c"># 다른 태스크로 확인</span>
-./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py --task Isaac-Reach-Franka-v0</code></pre>
+./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py --task Isaac-Reach-Franka-v0</code></pre>
 
 <div class="tw">
 <table class="opt">
@@ -375,7 +375,7 @@ M10 &ldquo;강화학습 개념 시연&rdquo; 의 최소 형태이기도 하다.<
 
 <p>스크립트만 자동 판정에 쓰려면:</p>
 
-<pre><code>/data/src/test_code/run_all.sh --headless &amp;&amp; <span class="p">echo</span> "이 PC 정상" || <span class="p">echo</span> "이 PC 점검 필요"</code></pre>
+<pre><code>/data/src/edu_isaac/run_all.sh --headless &amp;&amp; <span class="p">echo</span> "이 PC 정상" || <span class="p">echo</span> "이 PC 점검 필요"</code></pre>
 
 <hr>
 
@@ -432,7 +432,7 @@ M10 &ldquo;강화학습 개념 시연&rdquo; 의 최소 형태이기도 하다.<
 
 <p>복제된 PC 마다 아래 한 줄로 최종 확인한다.</p>
 
-<pre><code>/data/src/test_code/run_all.sh --headless &amp;&amp; <span class="p">echo</span> "이 PC 정상"</code></pre>
+<pre><code>/data/src/edu_isaac/run_all.sh --headless &amp;&amp; <span class="p">echo</span> "이 PC 정상"</code></pre>
 
 <p>GUI 확인까지 필요하면 <code>--headless</code> 를 뺀다.</p>
 
@@ -469,7 +469,7 @@ M10 &ldquo;강화학습 개념 시연&rdquo; 의 최소 형태이기도 하다.<
 </div>
 
 <footer class="doc">
-  KS260818 모방학습 교육 · WBS 2.5 &nbsp;·&nbsp; 원본: <code>/data/src/test_code/README.md</code>
+  KS260818 모방학습 교육 · WBS 2.5 &nbsp;·&nbsp; 원본: <code>/data/src/edu_isaac/README.md</code>
   &nbsp;·&nbsp; 최종 검증 2026-08-19
 </footer>
 

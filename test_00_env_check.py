@@ -6,7 +6,7 @@ Isaac Sim GUI를 띄우기 전에, 설치 경로 · GPU 드라이버 · 버전�
 시스템 python3 로 실행되며 외부 패키지를 요구하지 않는다(수 초 내 완료).
 
 사용법:
-    python3 /data/src/test_code/test_00_env_check.py
+    python3 /data/src/edu_isaac/test_00_env_check.py
 """
 
 import os

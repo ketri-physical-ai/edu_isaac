@@ -13,7 +13,7 @@ GUI 로 눈으로 확인하면서 동시에 `PASS`/`FAIL` 로 자동 판정한�
 |---|---|
 | Isaac Lab 경로 | `/data/src/isaaclab` |
 | Isaac Sim 경로 | `/data/src/isaaclab/_isaac_sim` (심볼릭 링크) |
-| 테스트 코드 경로 | `/data/src/test_code` |
+| 테스트 코드 경로 | `/data/src/edu_isaac` |
 
 **모든 명령은 `/data/src/isaaclab` 에서 실행한다.**
 Isaac Sim / Isaac Lab 은 전용 파이썬(`python.sh`)을 쓰므로 시스템 `python3` 로 실행하면 안 된다.
@@ -30,10 +30,10 @@ GUI 로 실행하려면 화면(DISPLAY)이 있어야 한다. SSH 접속 상태�
 
 ```bash
 # GUI 창이 순서대로 떴다 닫힌다 (약 4분)
-/data/src/test_code/run_all.sh
+/data/src/edu_isaac/run_all.sh
 
 # 창 없이 점검만 — 원격 접속 · PC 9대 복제 후 자동 점검용 (약 3분)
-/data/src/test_code/run_all.sh --headless
+/data/src/edu_isaac/run_all.sh --headless
 ```
 
 `run_all.sh` 는 `[00] → [01] → [02] → [03]` 순서로 실행하고 마지막에 요약을 출력한다.
@@ -61,7 +61,7 @@ OS · GPU 드라이버 · 디스크 · DISPLAY · 설치 경로 · 버전을 확
 Isaac Sim 을 띄우지 않으므로 **시스템 `python3` 로 실행**한다.
 
 ```bash
-python3 /data/src/test_code/test_00_env_check.py
+python3 /data/src/edu_isaac/test_00_env_check.py
 ```
 
 옵션 없음.
@@ -75,13 +75,13 @@ Isaac Sim(Kit) 자체가 뜨는지, USD 스테이지·렌더링이 되는지 확
 cd /data/src/isaaclab
 
 # GUI (기본)
-./_isaac_sim/python.sh /data/src/test_code/test_01_isaac_sim.py
+./_isaac_sim/python.sh /data/src/edu_isaac/test_01_isaac_sim.py
 
 # 창 없이 점검만
-./_isaac_sim/python.sh /data/src/test_code/test_01_isaac_sim.py --headless
+./_isaac_sim/python.sh /data/src/edu_isaac/test_01_isaac_sim.py --headless
 
 # 짧게 (렌더 프레임 수 축소)
-./_isaac_sim/python.sh /data/src/test_code/test_01_isaac_sim.py --frames 120
+./_isaac_sim/python.sh /data/src/edu_isaac/test_01_isaac_sim.py --frames 120
 ```
 
 | 옵션 | 기본값 | 설명 |
@@ -98,14 +98,14 @@ Isaac Lab AppLauncher 로 앱을 띄우고 중력·바닥충돌이 실제로 계
 cd /data/src/isaaclab
 
 # GUI (기본)
-./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py
+./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py
 
 # 창 없이 점검만
-./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py --headless
+./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py --headless
 
 # 짧게 / CPU 로 실행
-./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py --steps 120
-./isaaclab.sh -p /data/src/test_code/test_02_isaac_lab_sim.py --device cpu
+./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py --steps 120
+./isaaclab.sh -p /data/src/edu_isaac/test_02_isaac_lab_sim.py --device cpu
 ```
 
 | 옵션 | 기본값 | 설명 |
@@ -123,16 +123,16 @@ M10 "강화학습 개념 시연" 의 최소 형태이기도 하다.
 cd /data/src/isaaclab
 
 # GUI (기본) — 카트폴 16개가 무작위로 흔들린다
-./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py
+./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py
 
 # 창 없이 점검만
-./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py --headless
+./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py --headless
 
 # 환경 수 · 스텝 수 조정 (시연 시 환경을 늘리면 화면이 화려해진다)
-./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py --num_envs 64 --steps 600
+./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py --num_envs 64 --steps 600
 
 # 다른 태스크로 확인
-./isaaclab.sh -p /data/src/test_code/test_03_isaac_lab_env.py --task Isaac-Reach-Franka-v0
+./isaaclab.sh -p /data/src/edu_isaac/test_03_isaac_lab_env.py --task Isaac-Reach-Franka-v0
 ```
 
 | 옵션 | 기본값 | 설명 |
@@ -165,7 +165,7 @@ cd /data/src/isaaclab
 - 스크립트만 자동 판정에 쓰려면:
 
 ```bash
-/data/src/test_code/run_all.sh --headless && echo "이 PC 정상" || echo "이 PC 점검 필요"
+/data/src/edu_isaac/run_all.sh --headless && echo "이 PC 정상" || echo "이 PC 점검 필요"
 ```
 
 ---
@@ -189,7 +189,7 @@ cd /data/src/isaaclab
 복제된 PC 마다 아래 한 줄로 최종 확인한다.
 
 ```bash
-/data/src/test_code/run_all.sh --headless && echo "이 PC 정상"
+/data/src/edu_isaac/run_all.sh --headless && echo "이 PC 정상"
 ```
 
 GUI 확인까지 필요하면 `--headless` 를 뺀다.
